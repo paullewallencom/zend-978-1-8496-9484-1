@@ -1,0 +1,17 @@
+<?php 
+	use Application\Form\Element\Video;
+
+	// Declare a new video element
+	$video = new Video();
+	
+	// Set the attribute src for this element
+	$video->setAttribute('src', array(
+		'http://www.w3schools.com/html/mov_bbb.mp4',
+		'http://www.w3schools.com/html/mov_bbb.ogg',
+	));
+	
+	// We also want to begin auto playing once loaded
+	$video->setAttribute('autoplay', true);
+	
+	// Output the formatted element
+	echo $this->formVideo($video);

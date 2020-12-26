@@ -1,0 +1,11 @@
+<?php 
+    // Output the opening FORM tag: <form>
+	echo $this->form()
+			  ->openTag($this->form);
+	
+	// Output the formatted elements of the form
+	echo $this->formCollection($this->form);
+	
+	// Output the closing FROM tag </form>
+	echo $this->form()
+			  ->closeTag(); 

@@ -1,0 +1,34 @@
+<h1>
+	An error occurred!
+</h1>
+
+<p>
+	<!-- show the error message, that is the least we can 
+		 do -->
+	<?php echo $this->message; ?>
+</p>
+
+<!-- now show the exception, if we have turned this on 
+     in the configuration -->
+<?php 
+	if (isset($this->display_exceptions) === true && $this->display_exceptions) {
+		// Now let's see if we have an exception, and if it 
+		// is the right instance as well
+		if (isset($this->exception) === true && $this->exception instanceof Exception) {
+			// Jup, it is an exception all right
+			echo '<div>Exception: ';
+
+			// Show which class threw the exception
+			echo get_class($this->exception);
+
+			echo '</div>';
+
+			// Show the message thrown
+			echo '<h2>Exception message:</h2>';
+			echo '<div>'. $this->exception->getMessage(). '</div>';
+
+			// And the *beautiful* stack trace as well
+			echo '<h2>Stack trace:</h2>';
+			echo '<div>'. $this->exception->getTraceAsString(). '</div>';
+		}
+	}

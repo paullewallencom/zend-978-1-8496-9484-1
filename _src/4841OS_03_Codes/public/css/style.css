@@ -1,0 +1,13 @@
+/*
+	I present to you, the most boring CSS in the world since 1994.
+*/
+
+label, input, fieldset {
+    display: block;
+    margin: 0 0 10px;
+}
+
+input[type=radio] {
+	display: inline;
+	margin: 0 10px 10px;
+}
